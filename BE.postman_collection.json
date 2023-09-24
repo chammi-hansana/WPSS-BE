@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "4fa3d73a-f56f-4510-963a-5599a21c7040",
+		"name": "BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17257780"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sisira\",\n    \"phone\": \"0713115696\",\n    \"age\": \"56\",\n    \"address\": \" St. jude\",\n    \"email\": \"sisi@mail.com\",\n    \"userType\": \"Employer\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"c@mail.com\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQxNTVhMjUxNDYwZDY1NzA1N2FjNTIz.gmIbxtBCr8kQe_37UKRDUpPzN6DI_7v4K0Hydq_ek-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"6402e741a48ea0e1540891ba\",\n    \"title\": \"Painter\",\n    \"desc\": \"We need an expert painter.\",\n    \"date\": \"date\",\n    \"location\": \"St jude estate, Jaya mw, Elpitiya\",\n    \"salary\": \"2500\",\n    \"details\": \"details\",\n    \"duration\": \"10\",\n    \"contact\": \"0772290414\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/add-job",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"add-job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQwMmU3NDFhNDhlYTBlMTU0MDg5MWJh.HhXRBFmn4lBZTOx7GfxZwScL2twK6enQuvYWKfGmgQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/get-jobs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"get-jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQwMmU3NDFhNDhlYTBlMTU0MDg5MWJh.HhXRBFmn4lBZTOx7GfxZwScL2twK6enQuvYWKfGmgQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"6402db40054e6ed2eb584f66\",\n    \"job_id\": \"6402ea6e30b9cc96c4606ec3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/apply-job",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"apply-job"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET job req",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQwMmRiNDAwNTRlNmVkMmViNTg0ZjY2.5QyfuN3cV4UQlJbyEN1DSGivZ-wPe0-DtLIImAJ5lv8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/get-job-req?jobId=6402ea6e30b9cc96c4606ec3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"get-job-req"
+							],
+							"query": [
+								{
+									"key": "jobId",
+									"value": "6402ea6e30b9cc96c4606ec3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update job req",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQwMmU3NDFhNDhlYTBlMTU0MDg5MWJh.HhXRBFmn4lBZTOx7GfxZwScL2twK6enQuvYWKfGmgQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"6402db40054e6ed2eb584f66\",\n    \"job_id\": \"6402ea6e30b9cc96c4606ec3\",\n    \"status\": \"Approve\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/update-job-req/6402f3f911315223022122a4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"update-job-req",
+								"6402f3f911315223022122a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get filtered job request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQxNTVhMjUxNDYwZDY1NzA1N2FjNTIz.gmIbxtBCr8kQe_37UKRDUpPzN6DI_7v4K0Hydq_ek-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/get-filtered-job-req",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"get-filtered-job-req"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "64156f7f1460d657057ac52f",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Register admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"admin\",\n    \"phone\": \"0912290414\",\n    \"age\": \"23\",\n    \"address\": \"Galle\",\n    \"email\": \"admin@gmail.com\",\n    \"userType\": \"Admin\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQxNTVhMjUxNDYwZDY1NzA1N2FjNTIz.gmIbxtBCr8kQe_37UKRDUpPzN6DI_7v4K0Hydq_ek-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/get-all-users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"get-all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.NjQwMmZlYWJmMjkxM2M5Yjg0NzFkYTBk.u-juWG89LoF16H_eKOQGtmO5xWYT3azOvwDMydAJhlc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"641585ee1460d657057ac543\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/delete-user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"delete-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

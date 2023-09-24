@@ -1,2 +1,1 @@
-# WPSS-BE
-Wedding planning services system BE
+# job-management-system-be (MERN Stack)
